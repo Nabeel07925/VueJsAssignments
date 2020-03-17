@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+    <p>VueJS is pretty cool - {{name}} ({{age}})</p>
+    <!-- 2) Output your age, multiplied by 3 -->
+    <p>New age is {{age*3}}</p>
+    <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+    <p>{{genRand()}}</p>
+    <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+    <div>
+        <img style="width:100px;height:100px" v-bind:src="img">
+    </div>
+    <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+    <div>
+        <input type="text" v-bind:value="name">
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: 'MNM',
+            age: 23,
+            img: 'https://media.gettyimages.com/photos/jae-min-kim-of-korea-is-called-safe-ar-third-base-as-toshiaki-imae-picture-id75972257?s=612x612'
+        },
+        methods: {
+            genRand() {
+                return Math.random()*10
+            }
+        }
+    })
+</script>
+</body>
+</html>
